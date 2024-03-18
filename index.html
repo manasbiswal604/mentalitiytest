@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bipolar Test</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Add this line to link the CSS file -->
+</head>
+</head>
+<body>
+  <h1>Bipolar Test</h1>
+  <form action="process.php" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required><br><br>
+    
+    <!-- JavaScript to generate questions -->
+    <script>
+      // Array of questions
+      var questions = [
+        "At times I am MUCH more talkative or speak MUCH faster than usual.",
+        "There have been times when I was MUCH more active or did MANY more things than usual.",
+        "I get into moods where I feel VERY speeded up or irritable.",
+        "There have been times when I have felt both high (elated) and low (depressed) AT THE SAME TIME.",
+        "At times I have been MUCH more interested in sex than usual.",
+        "My self-confidence ranges from GREAT self-doubt to EQUALLY GREAT overconfidence.",
+        "There have been GREAT variations in the quantity or quality of my work.",
+        "FOR NO OBVIOUS REASON I sometimes have been VERY angry or hostile.",
+        "Sometimes I am mentally dull and at other times I think VERY creatively.",
+        "At times I am GREATLY interested in being with people and at other times I just want to be left alone with my thoughts.",
+        "At some times I have GREAT optimism and at other times EQUALLY GREAT pessimism.",
+        "Some of the time I show MUCH tearfulness and crying and at other times I laugh and joke EXCESSIVELY."
+      ];
+
+      // Loop through questions and generate HTML
+      for (var i = 0; i < questions.length; i++) {
+        document.write('<h2>Question ' + (i + 1) + ':</h2>');
+        document.write('<p>' + questions[i] + '</p>');
+
+        // Generate radio buttons
+        var labels = ["Never", "Rarely", "Sometimes", "Often", "Very Often"];
+        for (var j = 0; j < labels.length; j++) {
+          var id = 'q' + (i + 1) + '_' + j;
+          document.write('<input type="radio" name="q' + (i + 1) + '" id="' + id + '" value="' + labels[j] + '">');
+          document.write('<label for="' + id + '">' + labels[j] + '</label><br>');
+        }
+        document.write('<br>');
+      }
+    </script>
+
+<script>
+  // Array of questions starting from question number 13
+  var questions = [
+    "You felt so good or hyper that other people thought you were not your normal self or were so hyper that you got into trouble?",
+    "You were so irritable that you shouted at people or started fights or arguments?",
+    "You felt much more self-confident than usual?",
+    "You got much less sleep than usual and found you didn’t really miss it?",
+    "You were much more talkative or spoke much faster than usual?",
+    "Thoughts raced through your head or you couldn’t slow your mind down?",
+    "You were so easily distracted by things around you that you had trouble concentrating or staying on track?",
+    "You had much more energy than usual?",
+    "You were much more social or outgoing than usual, for example, you telephoned friends in the middle of the night?",
+    "You were much more interested in sex than usual?",
+    "You did things that were unusual for you or that other people might have thought were excessive, foolish, or risky?",
+    "Spending money got you or your family into trouble?",
+    "If you checked YES to more than one of the above, have several of these ever happened during the same period of time?",
+    "Have any of your blood relatives had manic-depressive illness or bipolar disorder? i.e. Children, siblings, parents, grandparents, aunts, and uncles.",
+    "Has a health professional ever told you that you have manic-depressive illness or bipolar disorder?",
+    "Have you ever received treatment/support for a mental health problem?"
+  ];
+
+  // Loop through questions and generate HTML
+  for (var i = 0; i < questions.length; i++) {
+    document.write('<h2>Question ' + (i + 13) + ':</h2>');
+    document.write('<p>' + questions[i] + '</p>');
+
+    // Generate radio buttons for YES and NO options
+    document.write('<input type="radio" name="q' + (i + 13) + '" id="q' + (i + 13) + '_yes" value="YES">');
+    document.write('<label for="q' + (i + 13) + '_yes">YES</label><br>');
+    document.write('<input type="radio" name="q' + (i + 13) + '" id="q' + (i + 13) + '_no" value="NO">');
+    document.write('<label for="q' + (i + 13) + '_no">NO</label><br><br>');
+  }
+</script>
+
+<h1>Think about your mental health test. What are the main things contributing to your mental health problems right now?</h1>
+  <form action="process.php" method="post">
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Abuse or violence">
+      Abuse or violence
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Relationship problems (friends, family, or significant other)">
+      Relationship problems (friends, family, or significant other)
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Body image">
+      Body image
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Low self-esteem or self-image">
+      Low self-esteem or self-image
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="School or work problems">
+      School or work problems
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Financial problems">
+      Financial problems
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Loneliness or isolation">
+      Loneliness or isolation
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Grief or loss of someone or something">
+      Grief or loss of someone or something
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="Experiencing hate/bullying (including racism, homophobia, transphobia, or discrimination)">
+      Experiencing hate/bullying (including racism, homophobia, transphobia, or discrimination)
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="State of the world (war, climate, politics)">
+      State of the world (war, climate, politics)
+    </label><br>
+    <label>
+      <input type="checkbox" name="contributing_factors[]" value="I don’t know (something just feels wrong)">
+      I don’t know (something just feels wrong)
+    </label><br><br>
+
+    <h1>Do you have any of the following physical health conditions?</h1>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Heart disease">
+      Heart disease
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Reproductive health concerns (PCOS, endometriosis, infertility, etc.)">
+      Reproductive health concerns (PCOS, endometriosis, infertility, etc.)
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Diabetes">
+      Diabetes
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Cancer">
+      Cancer
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Arthritis or other chronic pain">
+      Arthritis or other chronic pain
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Asthma, COPD or other lung conditions">
+      Asthma, COPD or other lung conditions
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Movement Disorders (involuntary tics, tardive dyskinesia, etc.)">
+      Movement Disorders (involuntary tics, tardive dyskinesia, etc.)
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Digestive problems (Crohn’s, colitis, IBS, etc.)">
+      Digestive problems (Crohn’s, colitis, IBS, etc.)
+    </label><br>
+    <label>
+      <input type="checkbox" name="physical_health_conditions[]" value="Neurological conditions (epilepsy, etc.) or traumatic brain injury (TBI)">
+      Neurological conditions (epilepsy, etc.) or traumatic brain injury (TBI)
+    </label><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
